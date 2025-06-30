@@ -12,18 +12,45 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.mobileformapp",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses camera to take photos for form submissions.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to photo library to select images for form submissions.",
+        "NSLocationWhenInUseUsageDescription": "This app uses location to help you select coordinates on the map."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFFFFF"
       },
-      "edgeToEdgeEnabled": true
+      "package": "com.yourcompany.mobileformapp",
+      "permissions": [
+        "CAMERA",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera to take photos for form submissions."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location to help select coordinates on the map."
+        }
+      ]
+    ]
   }
 }
