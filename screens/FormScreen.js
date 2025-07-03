@@ -16,7 +16,7 @@ import * as Location from 'expo-location';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
-const API_BASE_URL = 'http://your-backend-url.com/api'; // Replace with your backend URL
+const API_BASE_URL = 'http://192.168.1.14:5000/api'; // Replace with your backend URL
 
 export default function FormScreen() {
   const [title, setTitle] = useState('');

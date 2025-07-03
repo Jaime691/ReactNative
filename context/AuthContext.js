@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-const API_BASE_URL = 'http://your-backend-url.com/api'; // Replace with your backend URL
+const API_BASE_URL = 'http://192.168.1.14:5000/api'; // Replace with your backend URL
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -41,6 +41,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
+      debugger;
       const response = await axios.post(`${API_BASE_URL}/login`, {
         email,
         password,
